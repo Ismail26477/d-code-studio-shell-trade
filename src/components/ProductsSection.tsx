@@ -2,6 +2,11 @@
 
 import { useState } from 'react';
 import { Droplets, Gauge, Settings, Zap, Wrench } from 'lucide-react';
+import checkValveImg from '../assets/product-check-valve.jpg';
+import hydrantValveImg from '../assets/product-hydrant-valve.jpg';
+import hoseReelImg from '../assets/product-hose-reel.jpg';
+import pneumaticImg from '../assets/product-pneumatic.jpg';
+import waferNrvImg from '../assets/product-wafer-nrv.jpg';
 
 const ProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -21,7 +26,7 @@ const ProductsSection = () => {
       category: 'valves',
       price: '₹1,205.00',
       description: 'Cast Iron Body DI / SS Disc PN 1.0 / 1.6 Wafer Type Dual Plate NRV. GST 18% Extra',
-      image: '/src/assets/product-check-valve.jpg',
+      image: checkValveImg,
     },
     {
       id: 2,
@@ -29,7 +34,7 @@ const ProductsSection = () => {
       category: 'safety',
       price: '₹2,600.00',
       description: 'All Stainless Steel body Single Landing Valve 63 mm as per IS:5290. GST 18% Extra',
-      image: '/src/assets/product-hydrant-valve.jpg',
+      image: hydrantValveImg,
     },
     {
       id: 3,
@@ -37,7 +42,7 @@ const ProductsSection = () => {
       category: 'safety',
       price: '₹2,800.00',
       description: 'Heavy Duty duly ISI marked Hose Reel Drum (Only Drum) for fire safety applications',
-      image: '/src/assets/product-hose-reel.jpg',
+      image: hoseReelImg,
     },
     {
       id: 4,
@@ -45,7 +50,7 @@ const ProductsSection = () => {
       category: 'pneumatic',
       price: '₹16.00',
       description: 'All types and sizes of Pneumatic fittings are available. Brass and Steel connectors in various configurations',
-      image: '/src/assets/product-pneumatic.jpg',
+      image: pneumaticImg,
     },
     {
       id: 5,
@@ -53,7 +58,7 @@ const ProductsSection = () => {
       category: 'valves',
       price: '₹510.00',
       description: 'Cast Iron Body DI / SS Disc PN 1.0 / 1.6 Wafer Type NRV with CF8 casting. Compact design',
-      image: '/src/assets/product-wafer-nrv.jpg',
+      image: waferNrvImg,
     },
     {
       id: 6,
