@@ -1,15 +1,17 @@
-import heroImage from '@/assets/hero-industrial.jpg';
-
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
+          src="/hero-industrial.jpg"
           alt="Industrial Lubricant Manufacturing Facility"
           className="w-full h-full object-cover"
         />
+
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       </div>
@@ -20,7 +22,9 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6 animate-fade-up">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">Authorized Shell Lubricants Supplier</span>
+            <span className="text-sm font-medium text-primary">
+              Authorized Shell Lubricants Supplier
+            </span>
           </div>
 
           {/* Heading */}
@@ -33,8 +37,8 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-up delay-200">
-            Premium quality lubricants from Shell India Market Pvt Ltd. Serving industrial, 
-            automotive, and commercial sectors with excellence.
+            Premium quality lubricants from Shell India Market Pvt Ltd. Serving
+            industrial, automotive, and commercial sectors with excellence.
           </p>
 
           {/* CTAs */}
@@ -50,16 +54,28 @@ const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/50 animate-fade-up delay-400">
             <div>
-              <p className="text-3xl md:text-4xl font-bold text-gradient-gold">15+</p>
-              <p className="text-sm text-muted-foreground mt-1">Years Experience</p>
+              <p className="text-3xl md:text-4xl font-bold text-gradient-gold">
+                15+
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Years Experience
+              </p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-bold text-gradient-gold">500+</p>
-              <p className="text-sm text-muted-foreground mt-1">Happy Clients</p>
+              <p className="text-3xl md:text-4xl font-bold text-gradient-gold">
+                500+
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Happy Clients
+              </p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-bold text-gradient-gold">100%</p>
-              <p className="text-sm text-muted-foreground mt-1">Genuine Products</p>
+              <p className="text-3xl md:text-4xl font-bold text-gradient-gold">
+                100%
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Genuine Products
+              </p>
             </div>
           </div>
         </div>
