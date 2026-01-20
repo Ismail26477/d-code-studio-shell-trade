@@ -1,73 +1,67 @@
+'use client';
+
 import { useState } from 'react';
-import { Droplets, Car, Settings, Gauge, Cog } from 'lucide-react';
+import { Droplets, Gauge, Settings, Zap, Wrench } from 'lucide-react';
 
 const ProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
     { id: 'all', name: 'All Products', icon: Settings },
-    { id: 'industrial', name: 'Industrial Lubricants', icon: Droplets },
-    { id: 'automotive', name: 'Automotive Oils', icon: Car },
-    { id: 'greases', name: 'Greases', icon: Cog },
-    { id: 'hydraulic', name: 'Hydraulic Oils', icon: Gauge },
+    { id: 'valves', name: 'Check Valves', icon: Droplets },
+    { id: 'safety', name: 'Safety Equipment', icon: Gauge },
+    { id: 'pneumatic', name: 'Pneumatic Fittings', icon: Zap },
+    { id: 'hydraulic', name: 'Control Valves', icon: Wrench },
   ];
 
   const products = [
     {
       id: 1,
-      name: 'Shell Rimula R4 X',
-      category: 'industrial',
-      description: 'Heavy-duty diesel engine oil for commercial vehicles',
-      image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop',
+      name: 'Kartar ISI Marked CI Dual Plate NRV',
+      category: 'valves',
+      price: '₹1,205.00',
+      description: 'Cast Iron Body DI / SS Disc PN 1.0 / 1.6 Wafer Type Dual Plate NRV. GST 18% Extra',
+      image: '/src/assets/product-check-valve.jpg',
     },
     {
       id: 2,
-      name: 'Shell Tellus S2 V',
-      category: 'hydraulic',
-      description: 'Premium hydraulic fluid for industrial applications',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+      name: 'SS Hydrant Single Landing Valve',
+      category: 'safety',
+      price: '₹2,600.00',
+      description: 'All Stainless Steel body Single Landing Valve 63 mm as per IS:5290. GST 18% Extra',
+      image: '/src/assets/product-hydrant-valve.jpg',
     },
     {
       id: 3,
-      name: 'Shell Helix Ultra',
-      category: 'automotive',
-      description: 'Fully synthetic motor oil for passenger cars',
-      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&h=300&fit=crop',
+      name: 'Hose Reel Drum (Without Hose)',
+      category: 'safety',
+      price: '₹2,800.00',
+      description: 'Heavy Duty duly ISI marked Hose Reel Drum (Only Drum) for fire safety applications',
+      image: '/src/assets/product-hose-reel.jpg',
     },
     {
       id: 4,
-      name: 'Shell Gadus S3 V220C',
-      category: 'greases',
-      description: 'Premium multipurpose grease for industrial use',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop',
+      name: 'Pneumatic Connector, Elbow, Tee, Union',
+      category: 'pneumatic',
+      price: '₹16.00',
+      description: 'All types and sizes of Pneumatic fittings are available. Brass and Steel connectors in various configurations',
+      image: '/src/assets/product-pneumatic.jpg',
     },
     {
       id: 5,
-      name: 'Shell Omala S4 GX',
-      category: 'industrial',
-      description: 'Advanced synthetic industrial gear oil',
-      image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop',
+      name: 'Kartar ISI Marked CI Wafer NRV',
+      category: 'valves',
+      price: '₹510.00',
+      description: 'Cast Iron Body DI / SS Disc PN 1.0 / 1.6 Wafer Type NRV with CF8 casting. Compact design',
+      image: '/src/assets/product-wafer-nrv.jpg',
     },
     {
       id: 6,
-      name: 'Shell Spirax S6 AXME',
-      category: 'automotive',
-      description: 'Synthetic axle & manual transmission lubricant',
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop',
-    },
-    {
-      id: 7,
-      name: 'Shell Corena S4 R',
-      category: 'industrial',
-      description: 'Synthetic air compressor oil',
-      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop',
-    },
-    {
-      id: 8,
-      name: 'Shell Albida EP',
-      category: 'greases',
-      description: 'Extreme pressure grease for heavy-duty applications',
-      image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=400&h=300&fit=crop',
+      name: 'Yuken Direction Control Valves',
+      category: 'hydraulic',
+      price: 'On Request',
+      description: 'DSG-01-3C60, DSG-03-3C60, 2B2, 3C2, 2B3B, 3C3, 3C4 models. 35% discount on all Yuken valves',
+      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop',
     },
   ];
 
@@ -85,8 +79,8 @@ const ProductsSection = () => {
             Our <span className="text-gradient-gold">Products</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our comprehensive range of Shell lubricants designed for industrial, 
-            automotive, and commercial applications.
+            Premium industrial valves, hydraulic components, and pneumatic fittings. 
+            Leading supplier of engineering materials in Central India.
           </p>
         </div>
 
@@ -119,7 +113,7 @@ const ProductsSection = () => {
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={product.image}
+                  src={product.image || "/placeholder.svg"}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -135,10 +129,15 @@ const ProductsSection = () => {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors flex-1">
+                    {product.name}
+                  </h3>
+                </div>
+                <p className="text-lg font-bold text-primary mb-2">
+                  {product.price}
+                </p>
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                   {product.description}
                 </p>
                 <a
@@ -158,10 +157,10 @@ const ProductsSection = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">
-            Can't find what you're looking for? Contact us for custom requirements.
+            Need bulk quantities or custom solutions? Contact Indian Traders Corporation for wholesale pricing and special orders.
           </p>
           <a href="#quote" className="btn-gold">
-            Request Custom Quote
+            Get Bulk Quote Now
           </a>
         </div>
       </div>
